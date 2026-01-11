@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InmoControl - Detalle Gestión de Arriendos</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3b8a",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121620",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0f121a] dark:text-white font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#e9ebf2] dark:border-gray-800">
+<div class="layout-container flex justify-center">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between w-full max-w-[1280px]">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+<h2 class="text-[#0f121a] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">InmoControl</h2>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Rentabilidad</a>
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Arriendos</a>
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Postventa</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium" href="#">Ingresar</a>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-blue-900 transition-colors text-sm font-bold shadow-sm">
+<span class="truncate">Agendar demo</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<section class="w-full bg-[#f9f9fb] dark:bg-background-dark flex justify-center py-16 md:py-24 px-4 md:px-10 border-b border-gray-200 dark:border-gray-800">
+<div class="w-full max-w-[1280px]">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="flex-1 flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary dark:text-blue-300 text-xs font-bold uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">key</span>
+                                Módulo de Arriendos
+                            </div>
+<h1 class="text-[#0f121a] dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.02em]">
+                                Gestión centralizada de <span class="text-primary">contratos y pagos</span>.
+                            </h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed max-w-[600px]">
+                                Automatiza la cobranza, reajustes de IPC y mantenciones. Visualiza el estado de cada propiedad en tiempo real y reduce la morosidad.
+                            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold shadow-lg hover:bg-blue-900 hover:shadow-xl transition-all w-full sm:w-auto">
+                                    Ver demo del módulo
+                                </button>
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#0f121a] dark:text-white text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto gap-2">
+<span class="material-symbols-outlined text-gray-500">description</span>
+                                    Descargar ficha técnica
+                                </button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-[600px] relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-blue-400/10 dark:bg-blue-900/20 rounded-full blur-3xl -z-10"></div>
+<div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 overflow-hidden relative z-10">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-800/50">
+<h3 class="font-bold text-gray-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">real_estate_agent</span> 
+                                        Estado de Cartera
+                                    </h3>
+<span class="text-xs font-semibold bg-green-100 text-green-700 px-2 py-1 rounded">Actualizado hoy</span>
+</div>
+<div class="p-6 space-y-6">
+<div class="grid grid-cols-3 gap-4">
+<div class="text-center p-3 bg-blue-50 dark:bg-blue-900/10 rounded-lg">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Ocupación</p>
+<p class="text-2xl font-bold text-primary dark:text-blue-400">98%</p>
+</div>
+<div class="text-center p-3 bg-green-50 dark:bg-green-900/10 rounded-lg">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Recaudado</p>
+<p class="text-2xl font-bold text-green-600">$45M</p>
+</div>
+<div class="text-center p-3 bg-red-50 dark:bg-red-900/10 rounded-lg">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Mora &gt; 30d</p>
+<p class="text-2xl font-bold text-red-500">1.2%</p>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Últimos Movimientos</p>
+<div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">JD</div>
+<div>
+<p class="text-sm font-semibold text-gray-900 dark:text-white">Juan Diaz</p>
+<p class="text-xs text-gray-500">Apto 402 - Providencia</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-gray-900 dark:text-white">$450.000</p>
+<span class="text-[10px] font-bold text-green-600 bg-green-100 px-1.5 py-0.5 rounded-full">Pagado</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors cursor-pointer border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">ML</div>
+<div>
+<p class="text-sm font-semibold text-gray-900 dark:text-white">Maria Lopez</p>
+<p class="text-xs text-gray-500">Casa 8 - Las Condes</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-gray-900 dark:text-white">$890.000</p>
+<span class="text-[10px] font-bold text-orange-600 bg-orange-100 px-1.5 py-0.5 rounded-full">Pendiente</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-white dark:bg-background-dark py-20 px-4 md:px-10">
+<div class="w-full max-w-[1280px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl font-bold text-[#0f121a] dark:text-white mb-4">Todo el control operativo</h2>
+<p class="text-gray-600 dark:text-gray-400">
+                            Desde la firma del contrato hasta la devolución de garantía. Una suite completa para administradores y propietarios.
+                        </p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+<div class="flex-1 order-2 md:order-1">
+<div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 relative">
+<div class="absolute -top-3 -right-3 bg-blue-600 text-white p-2 rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-xl">notifications_active</span>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-gray-500 uppercase">Día 01</p>
+<p class="text-sm font-medium text-gray-800 dark:text-white">Generación automática de cobro</p>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 opacity-75">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-gray-500 uppercase">Día 05</p>
+<p class="text-sm font-medium text-gray-800 dark:text-white">Recordatorio de vencimiento enviado</p>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 opacity-50">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-gray-500 uppercase">Día 10</p>
+<p class="text-sm font-medium text-gray-800 dark:text-white">Alerta de morosidad y cálculo de multa</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<h3 class="text-2xl font-bold text-[#0f121a] dark:text-white mb-4">Cobranza 100% Automatizada</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                                Olvídate de enviar correos manuales. El sistema genera los cobros, envía notificaciones de pago y calcula multas por atraso automáticamente según las reglas de tu contrato.
+                            </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+                                    Recordatorios por Email y WhatsApp
+                                </li>
+<li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+                                    Cálculo automático de IPC
+                                </li>
+<li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-xl">check</span>
+                                    Portal de pago para inquilinos
+                                </li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-[#0f121a] dark:text-white mb-4">Flujo de Caja Comparativo</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                                Compara tus ingresos proyectados versus los reales. Identifica rápidamente desviaciones en tu presupuesto y mantén la rentabilidad de tus activos bajo control.
+                            </p>
+<a class="text-primary font-bold hover:underline inline-flex items-center gap-1" href="#">
+                                Ver reportes financieros <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="flex-1">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="flex justify-between items-end mb-6">
+<div>
+<p class="text-sm text-gray-500">Balance Neto (Mes Actual)</p>
+<p class="text-3xl font-bold text-gray-900 dark:text-white">$12.4M</p>
+</div>
+<div class="flex gap-2 text-xs">
+<div class="flex items-center gap-1"><div class="w-3 h-3 bg-blue-600 rounded-sm"></div>Ingresos</div>
+<div class="flex items-center gap-1"><div class="w-3 h-3 bg-gray-300 rounded-sm"></div>Egresos</div>
+</div>
+</div>
+<div class="flex justify-between items-end h-40 gap-2">
+<div class="w-full flex flex-col justify-end gap-1 h-full">
+<div class="w-full bg-blue-600 rounded-t h-[60%]"></div>
+<div class="w-full bg-gray-300 rounded-t h-[20%]"></div>
+<p class="text-[10px] text-center text-gray-400 mt-1">Ene</p>
+</div>
+<div class="w-full flex flex-col justify-end gap-1 h-full">
+<div class="w-full bg-blue-600 rounded-t h-[75%]"></div>
+<div class="w-full bg-gray-300 rounded-t h-[30%]"></div>
+<p class="text-[10px] text-center text-gray-400 mt-1">Feb</p>
+</div>
+<div class="w-full flex flex-col justify-end gap-1 h-full">
+<div class="w-full bg-blue-600 rounded-t h-[80%]"></div>
+<div class="w-full bg-gray-300 rounded-t h-[25%]"></div>
+<p class="text-[10px] text-center text-gray-400 mt-1">Mar</p>
+</div>
+<div class="w-full flex flex-col justify-end gap-1 h-full">
+<div class="w-full bg-blue-600 rounded-t h-[90%] opacity-50 border border-dashed border-blue-600 bg-transparent"></div> 
+<div class="w-full bg-gray-300 rounded-t h-[20%] opacity-50"></div>
+<p class="text-[10px] text-center text-gray-400 mt-1">Abr</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-background-light dark:bg-gray-900/50 py-20 px-4 md:px-10 border-t border-gray-100 dark:border-gray-800">
+<div class="w-full max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Conciliación Bancaria</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Vincula tus cuentas bancarias y reconoce transferencias automáticamente.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">draw</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Firma Digital</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Firma contratos de arriendo y mandatos 100% online y con validez legal.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">build</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Gestión de Tickets</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Centraliza las solicitudes de mantención y repara incidencias más rápido.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">folder_shared</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Portal Propietario</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Entrega transparencia total a tus inversionistas con accesos personalizados.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-primary py-16 px-4">
+<div class="max-w-4xl mx-auto text-center text-white">
+<h2 class="text-3xl font-bold mb-4">¿Listo para ordenar tus arriendos?</h2>
+<p class="text-blue-100 mb-8 text-lg">Comienza hoy mismo a gestionar tu cartera de propiedades de forma profesional.</p>
+<button class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">
+                        Solicitar Demo Gratuita
+                    </button>
+</div>
+</section>
+</main>
+<footer class="w-full bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+<div class="layout-container flex justify-center py-12 px-4 md:px-10">
+<div class="w-full max-w-[1280px] flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+<div class="flex flex-col gap-4 max-w-sm text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+<span class="text-[#0f121a] dark:text-white text-lg font-bold">InmoControl</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">
+                                La plataforma definitiva para la gestión inmobiliaria moderna. Potencia tus activos hoy.
+                            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Privacidad</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Términos y condiciones</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Contacto</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Soporte</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-100 dark:border-gray-800 pt-8 gap-4">
+<p class="text-gray-400 text-sm text-center md:text-left">© 2024 InmoControl. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
