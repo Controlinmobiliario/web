@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InmoControl - Control de Ventas y Rentabilidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3b8a", // Dark blue from request (close to #1E3A8A)
+                        "growth": "#10B981",  // Growth green from request
+                        "warning": "#EF4444", // Warning red from request
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121620",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0f121a] dark:text-white font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#e9ebf2] dark:border-gray-800">
+<div class="layout-container flex justify-center">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between w-full max-w-[1280px]">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+<h2 class="text-[#0f121a] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">InmoControl</h2>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Rentabilidad</a>
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Arriendos</a>
+<a class="text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Postventa</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-[#0f121a] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium" href="#">Ingresar</a>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-blue-900 transition-colors text-sm font-bold shadow-sm">
+<span class="truncate">Agendar demo</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<section class="w-full bg-[#f9f9fb] dark:bg-background-dark flex justify-center py-16 md:py-24 px-4 md:px-10 border-b border-gray-200 dark:border-gray-800">
+<div class="w-full max-w-[1280px]">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="flex-1 flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary dark:text-blue-300 text-xs font-bold uppercase tracking-wide">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                Módulo de Ventas
+                            </div>
+<h1 class="text-[#0f121a] dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.02em]">
+                                Maximice la <span class="text-primary">Rentabilidad</span> de sus Ventas Inmobiliarias
+                            </h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed max-w-[600px]">
+                                Control total sobre presupuestos de obra e ingresos. Compare proyecciones en tiempo real y tome decisiones estratégicas para asegurar el margen de cada proyecto.
+                            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold shadow-lg hover:bg-blue-900 hover:shadow-xl transition-all w-full sm:w-auto">
+                                    Agendar demo privada
+                                </button>
+<button class="flex items-center justify-center rounded-lg h-12 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[#0f121a] dark:text-white text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors w-full sm:w-auto gap-2">
+<span class="material-symbols-outlined text-gray-500">play_circle</span>
+                                    Ver cómo funciona
+                                </button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-[400px] lg:max-w-[450px] relative flex justify-center">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/10 dark:bg-blue-900/20 rounded-full blur-3xl -z-10"></div>
+<div class="relative bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl border-4 border-gray-800 w-[300px] h-[600px] overflow-hidden">
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+<div class="w-full h-full bg-white dark:bg-gray-900 rounded-[2rem] overflow-hidden flex flex-col relative z-10">
+<div class="bg-primary text-white p-6 pt-10 pb-4">
+<div class="flex justify-between items-center mb-2">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-bold text-sm">Dashboard Financiero</span>
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<h3 class="text-xl font-bold">Proyecto Los Robles</h3>
+<p class="text-xs text-blue-200">Última actualización: hace 5 min</p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-800/50">
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<h4 class="text-xs font-bold text-gray-500 uppercase mb-3">Balance General</h4>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-gray-600 dark:text-gray-300">Ingresos Ventas</span>
+<span class="font-bold text-growth">$845.2M</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-growth h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-gray-600 dark:text-gray-300">Presupuesto Obra</span>
+<span class="font-bold text-gray-800 dark:text-white">$620.5M</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+<span class="text-xs text-gray-500">Margen Actual</span>
+<span class="text-lg font-bold text-growth">+26.4%</span>
+</div>
+</div>
+<div class="bg-red-50 dark:bg-red-900/10 p-3 rounded-lg border border-red-100 dark:border-red-900/30 flex gap-3 items-start">
+<span class="material-symbols-outlined text-warning text-xl shrink-0 mt-0.5">warning</span>
+<div>
+<p class="text-xs font-bold text-red-800 dark:text-red-300">Desviación Detectada</p>
+<p class="text-[10px] text-red-600 dark:text-red-400 mt-0.5">Partida "Terminaciones" excede presupuesto en un 8%.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+<p class="text-[10px] text-gray-500 uppercase">Unidades</p>
+<p class="text-xl font-bold text-primary mt-1">45/60</p>
+<p class="text-[10px] text-growth font-medium">Vendidas</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 text-center">
+<p class="text-[10px] text-gray-500 uppercase">Velocidad</p>
+<p class="text-xl font-bold text-primary mt-1">3.2</p>
+<p class="text-[10px] text-gray-400 font-medium">Ventas/mes</p>
+</div>
+</div>
+</div>
+<div class="h-14 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 flex justify-around items-center text-gray-400">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="material-symbols-outlined">attach_money</span>
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-white dark:bg-background-dark py-20 px-4 md:px-10">
+<div class="w-full max-w-[1280px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-3xl font-bold text-[#0f121a] dark:text-white mb-4">Inteligencia de Negocios para Inmobiliarias</h2>
+<p class="text-gray-600 dark:text-gray-400">
+                            Centraliza la información financiera y comercial. Obtén una visión clara de la salud de tus proyectos y reacciona a tiempo.
+                        </p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+<div class="flex-1 order-2 md:order-1">
+<div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold text-gray-800 dark:text-white">Análisis de Margen por Proyecto</h3>
+<span class="px-2 py-1 bg-green-100 text-growth text-xs font-bold rounded">Saludable</span>
+</div>
+<div class="flex items-end gap-4 h-48 w-full mt-4">
+<div class="w-full bg-blue-100 dark:bg-blue-900/20 rounded-t-lg relative group h-[40%] hover:h-[45%] transition-all duration-500">
+<div class="absolute bottom-0 w-full bg-primary h-[80%] rounded-t-lg"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">ROI 12%</div>
+</div>
+<div class="w-full bg-blue-100 dark:bg-blue-900/20 rounded-t-lg relative group h-[60%] hover:h-[65%] transition-all duration-500">
+<div class="absolute bottom-0 w-full bg-primary h-[70%] rounded-t-lg"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">ROI 18%</div>
+</div>
+<div class="w-full bg-blue-100 dark:bg-blue-900/20 rounded-t-lg relative group h-[85%] hover:h-[90%] transition-all duration-500">
+<div class="absolute bottom-0 w-full bg-growth h-[90%] rounded-t-lg shadow-[0_0_15px_rgba(16,185,129,0.4)]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">ROI 24% (Destacado)</div>
+</div>
+<div class="w-full bg-blue-100 dark:bg-blue-900/20 rounded-t-lg relative group h-[55%] hover:h-[60%] transition-all duration-500">
+<div class="absolute bottom-0 w-full bg-primary h-[60%] rounded-t-lg"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">ROI 15%</div>
+</div>
+</div>
+<div class="flex justify-between text-xs text-gray-500 mt-2">
+<span>Q1</span>
+<span>Q2</span>
+<span>Q3</span>
+<span>Q4</span>
+</div>
+</div>
+</div>
+<div class="flex-1 order-1 md:order-2">
+<h3 class="text-2xl font-bold text-[#0f121a] dark:text-white mb-4">Rentabilidad en Tiempo Real</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                                No espere al cierre de mes. Visualice el retorno de inversión (ROI) y la salud financiera de cada etapa del proyecto. Nuestra plataforma cruza datos de construcción y ventas automáticamente.
+                            </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+<div class="mt-1 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-growth text-sm">check</span>
+</div>
+<div>
+<strong class="block text-gray-900 dark:text-white">Análisis de Margen por Proyecto</strong>
+<span class="text-sm">Identifique qué unidades o tipologías generan mayor ganancia.</span>
+</div>
+</li>
+<li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+<div class="mt-1 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-growth text-sm">check</span>
+</div>
+<div>
+<strong class="block text-gray-900 dark:text-white">Control de Inventario</strong>
+<span class="text-sm">Tracking en tiempo real de unidades vendidas, reservadas y disponibles.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-[#0f121a] dark:text-white mb-4">Gestión de Prospectos y Cierres</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                                Un CRM especializado para el sector inmobiliario. Siga el viaje de cada cliente desde la primera visita hasta la entrega de llaves, optimizando la tasa de conversión.
+                            </p>
+<div class="bg-blue-50 dark:bg-blue-900/10 p-4 rounded-lg border-l-4 border-primary">
+<p class="text-sm font-medium text-primary dark:text-blue-300">
+                                    "La integración entre ventas y finanzas redujo nuestros tiempos de reporte en un 70%."
+                                </p>
+</div>
+</div>
+<div class="flex-1">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-100 dark:border-gray-600">
+<div class="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-bold text-sm">JC</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-gray-800 dark:text-white">Juan Carlos M.</p>
+<p class="text-xs text-gray-500">Interesado en 3D/2B</p>
+</div>
+<span class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded">Cotización</span>
+</div>
+<div class="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-100 dark:border-gray-600">
+<div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">AM</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-gray-800 dark:text-white">Ana María R.</p>
+<p class="text-xs text-gray-500">Promesa de compra</p>
+</div>
+<span class="px-2 py-1 bg-blue-100 text-primary text-xs font-bold rounded">Firma</span>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-gray-800 rounded-lg border border-green-200 dark:border-green-900 shadow-md transform scale-[1.02]">
+<div class="w-10 h-10 rounded-full bg-green-100 text-growth flex items-center justify-center font-bold text-sm">SP</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-gray-800 dark:text-white">Sergio P.</p>
+<p class="text-xs text-gray-500">Escrituración</p>
+</div>
+<span class="px-2 py-1 bg-green-100 text-growth text-xs font-bold rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check_circle</span> Cerrado
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-background-light dark:bg-gray-900/50 py-20 px-4 md:px-10 border-t border-gray-100 dark:border-gray-800">
+<div class="w-full max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">inventory</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Control de Inventario</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Estado de unidades en tiempo real: disponibles, reservadas, vendidas y entregadas.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-growth/30 transition-colors">
+<div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-growth mb-4">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Análisis de Margen</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Visualice el ROI proyectado vs real para asegurar la salud financiera del proyecto.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+<div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary dark:text-blue-300 mb-4">
+<span class="material-symbols-outlined">siren_open</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Gestión de Prospectos</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Pipeline de ventas integrado para optimizar el seguimiento y cierre de negocios.</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-red-100 dark:border-red-900/30 hover:border-warning/30 transition-colors">
+<div class="w-10 h-10 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center text-warning mb-4">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<h4 class="font-bold text-gray-900 dark:text-white mb-2">Alertas de Desviación</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Notificaciones inmediatas si los costos de obra superan las proyecciones de venta.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-primary py-16 px-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="max-w-4xl mx-auto text-center text-white relative z-10">
+<h2 class="text-3xl font-bold mb-4">Tome el control financiero de sus proyectos</h2>
+<p class="text-blue-100 mb-8 text-lg">Únase a las desarrolladoras líderes que ya optimizan sus márgenes con InmoControl.</p>
+<button class="bg-growth hover:bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                        Agendar demo privada
+                    </button>
+<p class="mt-4 text-sm text-blue-200 opacity-80">Sin compromiso • Configuración personalizada</p>
+</div>
+</section>
+</main>
+<footer class="w-full bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+<div class="layout-container flex justify-center py-12 px-4 md:px-10">
+<div class="w-full max-w-[1280px] flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+<div class="flex flex-col gap-4 max-w-sm text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+<span class="text-[#0f121a] dark:text-white text-lg font-bold">InmoControl</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">
+                                La plataforma definitiva para la gestión inmobiliaria moderna. Potencia tus activos hoy.
+                            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Privacidad</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Términos y condiciones</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Contacto</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 text-sm font-medium transition-colors" href="#">Soporte</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-100 dark:border-gray-800 pt-8 gap-4">
+<p class="text-gray-400 text-sm text-center md:text-left">© 2024 InmoControl. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
