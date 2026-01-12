@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InmoControl - Entregas y Postventa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e3b8a", // Deep Blue
+                        "primary-light": "#3b82f6", 
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121620",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a1f2e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0f121a] dark:text-white font-display overflow-x-hidden antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e9ebf2] bg-surface-light dark:bg-surface-dark dark:border-[#2a2f3e] px-4 py-3 shadow-sm">
+<div class="mx-auto flex max-w-7xl items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary dark:text-blue-400">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-[#0f121a] dark:text-white">InmoControl</h2>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-[#556591] hover:text-primary transition-colors" href="#">Ventas</a>
+<a class="text-sm font-bold text-primary dark:text-blue-400" href="#">Postventa</a>
+<a class="text-sm font-medium text-[#556591] hover:text-primary transition-colors" href="#">Finanzas</a>
+<a class="text-sm font-medium text-[#556591] hover:text-primary transition-colors" href="#">Reportes</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 border border-[#d2d7e5] bg-transparent text-[#0f121a] dark:text-white text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    Login
+                </button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-blue-900 text-white text-sm font-bold transition-colors shadow-md shadow-blue-900/10">
+<span class="truncate">Demo</span>
+</button>
+</div>
+</div>
+</header>
+<!-- HeroSection -->
+<section class="relative flex w-full flex-col overflow-hidden py-12 lg:py-20 bg-surface-light dark:bg-surface-dark">
+<!-- Background decoration -->
+<div class="absolute inset-0 z-0 opacity-10" data-alt="Abstract dot pattern background" style="background-image: radial-gradient(#1e3b8a 1px, transparent 1px); background-size: 24px 24px;">
+</div>
+<div class="layout-container relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 md:px-8">
+<div class="flex flex-col items-center gap-8 text-center">
+<div class="inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-bold text-primary dark:text-blue-300 uppercase tracking-wide border border-blue-100 dark:border-blue-800">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Nuevo Módulo 2.0
+                </div>
+<h1 class="max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#0f121a] dark:text-white md:text-6xl">
+                    Gestión Eficiente de <br class="hidden md:block"/>
+<span class="text-primary dark:text-blue-400">Entregas y Postventa</span>
+</h1>
+<p class="max-w-2xl text-lg font-normal leading-relaxed text-[#556591] dark:text-gray-400">
+                    Optimiza la experiencia del propietario desde el primer día. Centraliza inspecciones, actas digitales y garantías en una sola plataforma operativa.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
+<button class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-blue-900/20 hover:bg-blue-900 transition-all hover:-translate-y-0.5">
+                        Ver Video Demo
+                    </button>
+<button class="flex h-12 items-center justify-center rounded-lg border border-[#d2d7e5] dark:border-gray-700 bg-white dark:bg-gray-800 px-8 text-base font-bold text-[#0f121a] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
+                        Explorar Funcionalidades
+                    </button>
+</div>
+<!-- Abstract Dashboard Preview -->
+<div class="mt-12 w-full max-w-5xl overflow-hidden rounded-xl border border-[#d2d7e5] dark:border-gray-700 bg-white dark:bg-gray-900 shadow-2xl">
+<div class="flex h-8 items-center gap-2 border-b border-[#e9ebf2] dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4">
+<div class="h-3 w-3 rounded-full bg-red-400"></div>
+<div class="h-3 w-3 rounded-full bg-yellow-400"></div>
+<div class="h-3 w-3 rounded-full bg-green-400"></div>
+</div>
+<div class="aspect-[16/6] w-full bg-cover bg-center" data-alt="Blurry dashboard showing graphs and data" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8tFpLXep2f8z-YtQKwMVW6S2w7bsd27f9XdBRtPGln24Ka3IFziF5MZ9i9DwkTrxW8DA9V95ciZJjVHa-mR0PXzeozDQ_5Us4HDv9D5al2tS2ljYsP6k_8YYZ9H-JWTGnBDgrBoOnAL2XOHwDgl0mslSe11Xx1Pi4b_Vjqa7tKGY803Il2vQQPt7JCUVna6NdvDf3XZRnEr2mUCMI1ULpZB7y8LnDGanSJgvL3CELByW8_DJihznlOxHAyExl7VBeS2wzWbxOxW7m");'>
+<div class="w-full h-full bg-white/10 backdrop-blur-[2px]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Feature Section 1: Entregas -->
+<section class="w-full bg-background-light dark:bg-background-dark py-16 md:py-24 border-b border-[#e9ebf2] dark:border-gray-800">
+<div class="mx-auto max-w-7xl px-4 md:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Text Content -->
+<div class="flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="uppercase tracking-wider text-sm">Entregas Digitales</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-[#0f121a] dark:text-white leading-tight">
+                        Checklists inteligentes para viviendas nuevas y arriendos
+                    </h2>
+<p class="text-lg text-[#556591] dark:text-gray-400 leading-relaxed">
+                        Digitaliza el proceso de entrega. Permite a tus inspectores capturar daños con fotos, geolocalización y firma digital en tiempo real.
+                    </p>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-start gap-3">
+<div class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-[#0f121a] dark:text-white">Captura de Daños</h4>
+<p class="text-sm text-[#556591] dark:text-gray-400">Registro fotográfico inmediato de observaciones en alta resolución.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-[#0f121a] dark:text-white">Firma Digital Legal</h4>
+<p class="text-sm text-[#556591] dark:text-gray-400">Validación biométrica y legal en el dispositivo móvil del cliente.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Visual: iPhone Mockup -->
+<div class="flex justify-center order-1 lg:order-2">
+<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl flex flex-col overflow-hidden">
+<div class="h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+<div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+<div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+<div class="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+<!-- Screen Content -->
+<div class="rounded-[2rem] overflow-hidden w-full h-full bg-white relative flex flex-col font-display">
+<!-- Status Bar -->
+<div class="bg-primary text-white pt-8 pb-4 px-6 flex justify-between items-center">
+<span class="material-symbols-outlined text-sm">menu</span>
+<span class="font-semibold text-sm">Inspección #4024</span>
+<span class="material-symbols-outlined text-sm">notifications</span>
+</div>
+<!-- App Content -->
+<div class="flex-1 overflow-y-auto p-4 bg-slate-50">
+<div class="bg-white p-4 rounded-xl shadow-sm mb-4 border border-slate-100">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-bold text-slate-800">Cocina</h3>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">2/2 OK</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between border-b border-slate-50 pb-2">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full border-2 border-green-500 flex items-center justify-center">
+<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+</div>
+<span class="text-sm text-slate-600">Grifería</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">photo_camera</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full border-2 border-green-500 flex items-center justify-center">
+<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+</div>
+<span class="text-sm text-slate-600">Mobiliario</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">photo_camera</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm mb-4 border border-slate-100">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-bold text-slate-800">Baño Principal</h3>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">1 obs.</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between border-b border-slate-50 pb-2">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full border-2 border-slate-300"></div>
+<span class="text-sm text-slate-600">Espejo</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">photo_camera</span>
+</div>
+<div class="flex items-center justify-between bg-red-50 p-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500 text-sm">warning</span>
+<span class="text-sm text-red-700 font-medium">Cerámica</span>
+</div>
+<div class="w-8 h-8 rounded bg-gray-200 bg-cover" data-alt="Close up of cracked tile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzsOc-FndzCC-puywVzRW53mfP1hwuEl-0Xui1GdJ7FWNPymzzTOxYul4QGfVckyLH0Nb3WOHEu3G2TlYnJPrblldeKpXsagIXzm48gafpY-lrbVyyNMDMnILk8NPSRBgGV4zP8DziLcowSdUF_XAZ0tZ63YIWjK2pFth8jjU-kV05KxGznpSLptyzv5WFdaNkO-Iu6qdwhnQXb58WzZCMmrTQdwv8A_YNuqIXJP9lJvXZDQ5K5FolCejh7Xf_dt9IOUqkoRDaW3Xp");'></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="p-4 bg-white border-t border-slate-100">
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg shadow-lg shadow-blue-900/10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">ink_pen</span>
+                                    Firmar Acta
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Feature Section 2: Postventa -->
+<section class="w-full bg-white dark:bg-surface-dark py-16 md:py-24">
+<div class="mx-auto max-w-7xl px-4 md:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Visual: Dashboard Mockup -->
+<div class="order-2 lg:order-1 relative">
+<!-- Card Container -->
+<div class="w-full bg-slate-50 dark:bg-gray-800 rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-[#d2d7e5] dark:border-gray-700 overflow-hidden">
+<!-- Header Mock -->
+<div class="h-14 bg-white dark:bg-gray-900 border-b border-slate-200 dark:border-gray-700 flex items-center px-4 justify-between">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold text-xs">IC</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-gray-700"></div>
+<span class="text-sm font-semibold text-slate-700 dark:text-gray-300">Dashboard Postventa</span>
+</div>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-gray-800"></div>
+<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-gray-800"></div>
+</div>
+</div>
+<div class="flex">
+<!-- Sidebar Mock -->
+<div class="w-16 md:w-48 bg-slate-50 dark:bg-gray-900 border-r border-slate-200 dark:border-gray-700 p-4 hidden md:flex flex-col gap-2">
+<div class="h-8 w-full bg-blue-100 dark:bg-blue-900/20 rounded flex items-center px-2 gap-2 text-primary dark:text-blue-400">
+<span class="material-symbols-outlined text-xs">dashboard</span>
+<span class="text-xs font-bold">Resumen</span>
+</div>
+<div class="h-8 w-full rounded flex items-center px-2 gap-2 text-slate-500 dark:text-gray-500">
+<span class="material-symbols-outlined text-xs">confirmation_number</span>
+<span class="text-xs font-medium">Tickets</span>
+</div>
+<div class="h-8 w-full rounded flex items-center px-2 gap-2 text-slate-500 dark:text-gray-500">
+<span class="material-symbols-outlined text-xs">group</span>
+<span class="text-xs font-medium">Propietarios</span>
+</div>
+</div>
+<!-- Main Content Mock -->
+<div class="flex-1 p-6">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg border border-slate-100 dark:border-gray-700 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-gray-400 mb-1">Tickets Abiertos</p>
+<p class="text-2xl font-bold text-slate-800 dark:text-white">24</p>
+</div>
+<div class="bg-white dark:bg-gray-800 p-3 rounded-lg border border-slate-100 dark:border-gray-700 shadow-sm">
+<p class="text-xs text-slate-500 dark:text-gray-400 mb-1">SLA Promedio</p>
+<p class="text-2xl font-bold text-green-600">4.2d</p>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-lg border border-slate-100 dark:border-gray-700 shadow-sm overflow-hidden">
+<div class="px-4 py-3 border-b border-slate-100 dark:border-gray-700 flex justify-between items-center">
+<span class="text-xs font-bold text-slate-700 dark:text-gray-300">Solicitudes Recientes</span>
+<span class="text-[10px] text-blue-600 font-medium cursor-pointer">Ver todas</span>
+</div>
+<!-- Table Rows -->
+<div class="px-4 py-3 border-b border-slate-50 dark:border-gray-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<div>
+<p class="text-xs font-bold text-slate-800 dark:text-white">Fuga lavaplatos</p>
+<p class="text-[10px] text-slate-400">Depto 302 • Torre A</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] bg-red-50 text-red-600 font-medium border border-red-100">Urgente</span>
+</div>
+<div class="px-4 py-3 border-b border-slate-50 dark:border-gray-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-amber-400"></div>
+<div>
+<p class="text-xs font-bold text-slate-800 dark:text-white">Ajuste puerta acceso</p>
+<p class="text-[10px] text-slate-400">Depto 105 • Torre B</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] bg-amber-50 text-amber-600 font-medium border border-amber-100">Pendiente</span>
+</div>
+<div class="px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<div>
+<p class="text-xs font-bold text-slate-800 dark:text-white">Pintura cielo</p>
+<p class="text-[10px] text-slate-400">Depto 701 • Torre A</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] bg-green-50 text-green-600 font-medium border border-green-100">Resuelto</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Badge -->
+<div class="absolute -right-4 top-10 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-slate-100 dark:border-gray-700 animate-bounce hidden lg:block">
+<div class="flex items-center gap-2">
+<div class="bg-blue-100 p-1 rounded">
+<span class="material-symbols-outlined text-primary text-sm">chat</span>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 dark:text-gray-400">Mensaje Nuevo</p>
+<p class="text-xs font-bold text-slate-800 dark:text-white">Propietario Depto 302</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-6 order-1 lg:order-2">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="uppercase tracking-wider text-sm">Postventa Controlada</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-[#0f121a] dark:text-white leading-tight">
+                        Gestión centralizada de garantías y reclamos
+                    </h2>
+<p class="text-lg text-[#556591] dark:text-gray-400 leading-relaxed">
+                        Olvídate de las hojas de cálculo. Centraliza todas las solicitudes de postventa, asigna técnicos automáticamente y mantén al cliente informado en todo momento.
+                    </p>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-start gap-3">
+<div class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-[#0f121a] dark:text-white">Tickets y SLA</h4>
+<p class="text-sm text-[#556591] dark:text-gray-400">Control de plazos de garantía y tiempos de respuesta por categoría.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-[#0f121a] dark:text-white">Portal de Propietarios</h4>
+<p class="text-sm text-[#556591] dark:text-gray-400">Comunicación directa y transparente para mejorar la satisfacción.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Grid Section -->
+<section class="w-full bg-background-light dark:bg-background-dark py-16">
+<div class="mx-auto max-w-7xl px-4 md:px-8">
+<div class="flex flex-col md:flex-row gap-6">
+<!-- Card 1 -->
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#d2d7e5] dark:border-gray-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg">
+<div class="h-12 w-12 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-700 dark:text-amber-500">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#0f121a] dark:text-white">Alertas de Garantía</h3>
+<p class="text-[#556591] dark:text-gray-400 text-sm leading-relaxed">
+                            Notificaciones automáticas antes de que expiren las garantías de proveedores y subcontratos.
+                        </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#d2d7e5] dark:border-gray-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg">
+<div class="h-12 w-12 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-700 dark:text-indigo-400">
+<span class="material-symbols-outlined text-2xl">folder_managed</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#0f121a] dark:text-white">Gestión Documental</h3>
+<p class="text-[#556591] dark:text-gray-400 text-sm leading-relaxed">
+                            Almacenamiento seguro de manuales, planos y actas de entrega, accesibles por QR.
+                        </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#d2d7e5] dark:border-gray-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg">
+<div class="h-12 w-12 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center text-pink-700 dark:text-pink-400">
+<span class="material-symbols-outlined text-2xl">sentiment_satisfied</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-lg font-bold text-[#0f121a] dark:text-white">Seguimiento NPS</h3>
+<p class="text-[#556591] dark:text-gray-400 text-sm leading-relaxed">
+                            Encuestas automáticas post-atención para medir y mejorar la lealtad del cliente.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA Section -->
+<section class="w-full bg-primary text-white py-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-12 opacity-10">
+<span class="material-symbols-outlined text-[300px] leading-none">corporate_fare</span>
+</div>
+<div class="mx-auto max-w-4xl px-4 md:px-8 relative z-10 text-center flex flex-col items-center gap-8">
+<h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                Eleva el estándar de tu inmobiliaria
+            </h2>
+<p class="text-lg md:text-xl text-blue-100 max-w-2xl font-medium">
+                Únete a las empresas líderes que ya gestionan sus entregas y postventa con InmoControl. Agenda una demostración personalizada hoy.
+            </p>
+<button class="bg-white text-primary text-lg font-bold py-4 px-10 rounded-lg shadow-xl hover:bg-gray-100 transition-all hover:scale-105 flex items-center gap-2">
+<span class="material-symbols-outlined">calendar_month</span>
+                Agendar demo privada
+            </button>
+<p class="text-sm text-blue-200 opacity-80 mt-2">Sin compromiso • Configuración en 24hs</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white dark:bg-surface-dark border-t border-[#e9ebf2] dark:border-gray-800 py-12">
+<div class="mx-auto max-w-7xl px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-primary dark:text-blue-400">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+<span class="text-lg font-bold text-[#0f121a] dark:text-white">InmoControl</span>
+</div>
+<div class="flex gap-8 text-sm text-[#556591]">
+<a class="hover:text-primary transition-colors" href="#">Términos</a>
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Soporte</a>
+<a class="hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<p class="text-sm text-[#9ca3af]">
+                © 2023 InmoControl. Todos los derechos reservados.
+            </p>
+</div>
+</footer>
+</body></html>
